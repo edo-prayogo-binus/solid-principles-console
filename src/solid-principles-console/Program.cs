@@ -34,7 +34,7 @@ class Program
                 OptionPrinciples.SingleResponsibilityPrinciple(_rootPathFolderShared);
                 break;
             case "2":
-                // OpenClosedPrinciple();
+                OptionPrinciples.OpenClosedPrinciple(_rootPathFolderShared);
                 break;
             case "3":
                 // LiskovSubstitutionPrinciple();

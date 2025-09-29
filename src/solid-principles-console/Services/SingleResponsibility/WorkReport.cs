@@ -1,6 +1,6 @@
 ﻿using solid_principles_console.Models;
 
-namespace solid_principles_console.Services.SingleResponsibilities
+namespace solid_principles_console.Services.SingleResponsibility
 {
     public class WorkReport
     {

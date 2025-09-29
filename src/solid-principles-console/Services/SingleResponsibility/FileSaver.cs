@@ -1,4 +1,4 @@
-﻿namespace solid_principles_console.Services.SingleResponsibilities
+﻿namespace solid_principles_console.Services.SingleResponsibility
 {
     public class FileSaver
     {
