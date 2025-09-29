@@ -47,7 +47,7 @@ class Program
                 ChoosePrinciplesAgain();
                 break;
             case "5":
-                // DependencyInversionPrinciple();
+                OptionPrinciples.DependencyInversionPrinciple();
                 ChoosePrinciplesAgain();
                 break;
             default:

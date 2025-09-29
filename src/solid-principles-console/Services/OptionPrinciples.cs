@@ -1,4 +1,6 @@
-﻿using solid_principles_console.Models;
+﻿using solid_principles_console.Enums;
+using solid_principles_console.Models;
+using solid_principles_console.Services.DependencyInversion;
 using solid_principles_console.Services.InterfaceSegregation;
 using solid_principles_console.Services.LiskovSubstitution;
 using solid_principles_console.Services.OpenClosed;
@@ -72,7 +74,25 @@ namespace solid_principles_console.Services
             Console.WriteLine();
 
             Helper.PrintHeader("End of ISP Example");
-        }   
+        }
+
+        public static void DependencyInversionPrinciple()
+        {
+            Helper.PrintHeader("Start of DIP Example");
+            // Implementation would go here
+            var empManager = new EmployeeManager();
+            empManager.AddEmployee(new Employee { Name = "Leen", Gender = Gender.Female, Position = Position.Manager });
+            empManager.AddEmployee(new Employee { Name = "Mike", Gender = Gender.Male, Position = Position.Administrator });
+            empManager.AddEmployee(new Employee { Name = "Oscar", Gender = Gender.Male, Position = Position.Executive });
+            empManager.AddEmployee(new Employee { Name = "Sara", Gender = Gender.Female, Position = Position.Manager });
+
+            Console.WriteLine($"Total number of employees in our company is: {empManager.GetTotalEmployees()}");
+
+            var stats = new EmployeeStatistics(empManager);
+            Console.WriteLine($"Number of female managers in our company is: {stats.CountFemaleManagers()}");
+
+            Helper.PrintHeader("End of DIP Example");
+        }
         #endregion
     }
 }
