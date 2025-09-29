@@ -42,14 +42,75 @@ namespace solid_principles_console.Services
 
         public static void LiskovSubstitutionPrinciple()
         {
+            int[] numbers = [];
             Helper.PrintHeader("Start of LSP Example");
-            var numbers = new int[] { 5, 7, 9, 8, 1, 6, 4 };
-            SumCalculator sum = new SumCalculator(numbers);
-            Console.WriteLine($"The sum of all the numbers: {sum.Calculate()}");
+            Console.WriteLine("Do you wanna try with dummy ? (y/n)");
+            var choice = Console.ReadLine();
+            if (choice?.ToLower() == "y")
+            {
+                Console.WriteLine("Using dummy values:");
+                numbers = [1, 2, 3, 4, 5];
+            }
+            else
+            {
+                Console.WriteLine("Please enter numbers separated by commas (e.g., 1,2,3):");
+                var input = Console.ReadLine();
+                if (!string.IsNullOrWhiteSpace(input))
+                {
+                    numbers = input.Split(',').Select(n =>
+                    {
+                        if (int.TryParse(n.Trim(), out int parsedNumber))
+                        {
+                            return parsedNumber;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"'{n}' is not a valid number. It will be ignored.");
+                            return (int?)null;
+                        }
+                    })
+                    .Where(n => n.HasValue)
+                    .Select(n => n.Value)
+                    .ToArray();
+                }
+            }
+            Console.WriteLine("This is numbers ");
+            Console.WriteLine(string.Join(", ", numbers));
             Console.WriteLine();
-            SumCalculator evenSum = new EvenNumbersSumCalculator(numbers);
-            Console.WriteLine($"The sum of all the even numbers: {evenSum.Calculate()}");
-            Helper.PrintHeader("End of LSP Example");
+
+            SumCalculator dummySum = new SumCalculator(numbers);
+            Console.WriteLine($"The sum of all the numbers: {dummySum.Calculate()}");
+            Console.WriteLine();
+
+            Console.WriteLine("Check sum of even, odd or both ?");
+            Console.WriteLine("1. Even");
+            Console.WriteLine("2. Odd");
+            Console.WriteLine("3. Both");
+            var choiceSum = Console.ReadLine();
+            if (choiceSum == "1")
+            {
+                SumCalculator dummyEvenSum = new EvenNumbersSumCalculator(numbers);
+                Console.WriteLine($"The sum of all the even numbers: {dummyEvenSum.Calculate()}");
+            }
+            else if (choiceSum == "2")
+            {
+                SumCalculator dummyOddSum = new OddNumbersSumCalculator(numbers);
+                Console.WriteLine($"The sum of all the odd numbers: {dummyOddSum.Calculate()}");
+            }
+            else if (choiceSum == "3")
+            {
+                SumCalculator dummyOddSum = new OddNumbersSumCalculator(numbers);
+                Console.WriteLine($"The sum of all the odd numbers: {dummyOddSum.Calculate()}");
+                SumCalculator dummyEvenSum = new EvenNumbersSumCalculator(numbers);
+                Console.WriteLine($"The sum of all the even numbers: {dummyEvenSum.Calculate()}");
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Invalid choice. Please select 1, 2, or 3.");
+                LiskovSubstitutionPrinciple();
+            }
+
         }
 
         public static void InterfaceSegregationPrinciple()

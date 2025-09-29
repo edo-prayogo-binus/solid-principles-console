@@ -51,14 +51,25 @@ class Program
                 ChoosePrinciplesAgain();
                 break;
             default:
+                Console.Clear();
                 Console.WriteLine("Invalid choice. Please select a number between 1 and 5.");
+                Console.Write("Do you want to exit? (y/n): ");
+                var exit = Console.ReadLine();
+                if (exit?.ToLower() != "y")
+                {
+                    Console.Clear();
+                    ChoosePrinciles();
+                }
+                else
+                {
+                    Console.WriteLine("Exiting the program. Goodbye!");
+                }
                 break;
         }
     }
 
     private static void ChoosePrinciplesAgain()
     {
-
         Console.Write("Do you want to choose another principle? (y/n): ");
         var again = Console.ReadLine();
         Console.Clear();
