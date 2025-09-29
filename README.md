@@ -46,12 +46,27 @@ You should see outputs explaining each SOLID principle in action. 🎉
 solid-principles-console/
 │
 ├── src/
-│   └── solid-principles-console/   # Main console app
+│   └── solid-principles-console/
+│       ├── Dependencies/
+│       │   ├── Enums/
+│       │   └── Models/
+│       │
+│       ├── Services/
+│       │   ├── DependencyInversion/
+│       │   ├── InterfaceSegregation/
+│       │   ├── LiskovSubstitution/
+│       │   ├── OpenClosed/
+│       │   └── SingleResponsibility/
+│       │
+│       ├── Helper.cs
+│       ├── OptionPrinciples.cs
+│       └── Program.cs
 │
-├── .gitignore                      # Ignores bin, obj, and IDE files
+├── .gitignore
 ├── README.md
 └── LICENSE (optional)
 ```
+
 
 ---
 
