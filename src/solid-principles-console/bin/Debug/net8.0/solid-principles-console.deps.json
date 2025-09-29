@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "solid-principles-console/1.0.0": {
+        "runtime": {
+          "solid-principles-console.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "solid-principles-console/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
