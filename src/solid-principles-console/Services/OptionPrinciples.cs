@@ -1,4 +1,5 @@
 ﻿using solid_principles_console.Models;
+using solid_principles_console.Services.LiskovSubstitution;
 using solid_principles_console.Services.OpenClosed;
 using solid_principles_console.Services.SingleResponsibility;
 
@@ -22,7 +23,7 @@ namespace solid_principles_console.Services
             Helper.PrintHeader("End of SRP Example");
         }
 
-        public static void OpenClosedPrinciple(string rootPathFolderShared)
+        public static void OpenClosedPrinciple()
         {
             Helper.PrintHeader("Start of OCP Example");
             var devCalculations = new List<BaseSalaryCalculator>
@@ -34,6 +35,18 @@ namespace solid_principles_console.Services
             var calculator = new SalaryCalculator(devCalculations);
             Console.WriteLine($"Sum of all the developer salaries is {calculator.CalculateTotalSalaries()} dollars");
             Helper.PrintHeader("End of OCP Example");
+        }
+
+        public static void LiskovSubstitutionPrinciple()
+        {
+            Helper.PrintHeader("Start of LSP Example");
+            var numbers = new int[] { 5, 7, 9, 8, 1, 6, 4 };
+            SumCalculator sum = new SumCalculator(numbers);
+            Console.WriteLine($"The sum of all the numbers: {sum.Calculate()}");
+            Console.WriteLine();
+            SumCalculator evenSum = new EvenNumbersSumCalculator(numbers);
+            Console.WriteLine($"The sum of all the even numbers: {evenSum.Calculate()}");
+            Helper.PrintHeader("End of LSP Example");
         }
         #endregion
     }

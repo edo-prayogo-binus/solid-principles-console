@@ -32,22 +32,43 @@ class Program
         {
             case "1":
                 OptionPrinciples.SingleResponsibilityPrinciple(_rootPathFolderShared);
+                ChoosePrinciplesAgain();
                 break;
             case "2":
-                OptionPrinciples.OpenClosedPrinciple(_rootPathFolderShared);
+                OptionPrinciples.OpenClosedPrinciple();
+                ChoosePrinciplesAgain();
                 break;
             case "3":
-                // LiskovSubstitutionPrinciple();
+                OptionPrinciples.LiskovSubstitutionPrinciple();
+                ChoosePrinciplesAgain();
                 break;
             case "4":
                 // InterfaceSegregationPrinciple();
+                ChoosePrinciplesAgain();
                 break;
             case "5":
                 // DependencyInversionPrinciple();
+                ChoosePrinciplesAgain();
                 break;
             default:
                 Console.WriteLine("Invalid choice. Please select a number between 1 and 5.");
                 break;
+        }
+    }
+
+    private static void ChoosePrinciplesAgain()
+    {
+
+        Console.Write("Do you want to choose another principle? (y/n): ");
+        var again = Console.ReadLine();
+        Console.Clear();
+        if (again?.ToLower() == "y")
+        {
+            ChoosePrinciles();
+        }
+        else
+        {
+            Console.WriteLine("Exiting the program. Goodbye!");
         }
     }
 
