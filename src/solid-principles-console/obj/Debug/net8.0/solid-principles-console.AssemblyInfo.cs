@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("solid-principles-console")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c1cb717b76370d827621dc0f9c6d07d3c1339d81")]
 [assembly: System.Reflection.AssemblyProductAttribute("solid-principles-console")]
 [assembly: System.Reflection.AssemblyTitleAttribute("solid-principles-console")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
