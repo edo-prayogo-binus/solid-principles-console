@@ -43,7 +43,7 @@ class Program
                 ChoosePrinciplesAgain();
                 break;
             case "4":
-                // InterfaceSegregationPrinciple();
+                OptionPrinciples.InterfaceSegregationPrinciple();
                 ChoosePrinciplesAgain();
                 break;
             case "5":

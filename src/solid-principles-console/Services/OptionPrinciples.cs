@@ -1,4 +1,5 @@
 ﻿using solid_principles_console.Models;
+using solid_principles_console.Services.InterfaceSegregation;
 using solid_principles_console.Services.LiskovSubstitution;
 using solid_principles_console.Services.OpenClosed;
 using solid_principles_console.Services.SingleResponsibility;
@@ -48,6 +49,30 @@ namespace solid_principles_console.Services
             Console.WriteLine($"The sum of all the even numbers: {evenSum.Calculate()}");
             Helper.PrintHeader("End of LSP Example");
         }
+
+        public static void InterfaceSegregationPrinciple()
+        {
+            Helper.PrintHeader("Start of ISP Example");
+            Helper.PrintHeader("Typical vehicle example:");
+            // Implementation would go here
+            Helper.PrintHeader("A car that can only drive:");
+            ICar car = new Car();
+            car.Drive();
+            Console.WriteLine();
+
+            Helper.PrintHeader("A plane that can only fly:");
+            IAirplane airplane = new Airplane();
+            airplane.Fly();
+            Console.WriteLine();
+
+            Helper.PrintHeader("A multi functional car that can both drive and fly:");
+            IMultiFunctionalVehicle multiFunctionalVehicle = new MultiFunctionalCar(new Car(), new Airplane());
+            multiFunctionalVehicle.Drive();
+            multiFunctionalVehicle.Fly();
+            Console.WriteLine();
+
+            Helper.PrintHeader("End of ISP Example");
+        }   
         #endregion
     }
 }
