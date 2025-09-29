@@ -86,3 +86,8 @@ If you have additional examples, improvements, or bug fixes, feel free to open a
 ---
 
 ⭐ **Tip:** Star this repo if you found it useful!
+
+---
+## 📚 References
+
+- [SOLID Principles in C# — Code Maze](https://code-maze.com/solid-principles/)
